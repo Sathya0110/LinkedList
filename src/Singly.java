@@ -46,6 +46,21 @@ public class Singly {
         tail=newNode;
         size++;
     }
+    public void insertMid(int pos,int data)
+    {
+        Node m=head;
+        for(int i=1;i<pos-1;i++)
+        {
+            m=m.next;
+        }
+        Node nm=new Node(data);
+        Node temp=m.next;
+        m.next=nm;
+        nm.next=temp;
+
+
+    }
+
     public void deleteFirst()
     {
         if(head==null)
@@ -55,12 +70,30 @@ public class Singly {
         }
         head=head.next;
     }
-    public void deleteMiddle()
+    public void deleteMiddle(int index)
     {
-
+        Node h=head;
+        for(int i=1;i<index-1;i++)
+        {
+            h=h.next;
+        }
+        h.next=h.next.next;
     }
     public void deleteLast()
     {
+         if(head==tail)
+         {
+             tail=null;
+             return;
+         }
+         Node node1=head;
+         for(int i=1;i<size;i++)
+         {
+             node1=node1.next;
+
+         }
+
+         node1.next=null;
 
     }
 

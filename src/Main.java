@@ -8,5 +8,10 @@ public class Main {
         list.insertEnd(12);
         list.insertEnd(13);
         list.display();
+        //list.deleteLast();
+        list.insertMid(3,5);
+        System.out.println();
+        list.display();
+
     }
 }
