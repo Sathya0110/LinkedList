@@ -96,6 +96,23 @@ public class Singly {
          node1.next=null;
 
     }
+    public void insertRecur(int pos,int data)
+    {
+           head=insertRecur(pos,data,head);
+    }
+
+    public Node insertRecur(int pos,int data,Node node)
+    {
+        if(pos==0)
+        {
+            Node temp=new Node(node, data);
+            return temp;
+
+        }
+
+        node.next=insertRecur(pos-1,data,node.next);
+        return node;
+    }
 
     public void display()
     {
